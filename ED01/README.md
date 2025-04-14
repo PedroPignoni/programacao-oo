@@ -1,36 +1,43 @@
-# Jogo de Adivinhação - Programação Orientada a Objetos (POO)
+Jogo de Adivinhação
 
-Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos (POO) do curso de Análise e Desenvolvimento de Sistemas, 4º Período.
+Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos (POO) no curso de Análise e Desenvolvimento de Sistemas.
+Descrição
 
-## 🎮 Descrição
+O jogo permite que o jogador tente adivinhar um número secreto entre 1 e 100. A cada tentativa, o sistema informa se o número é maior ou menor que o chute. Quando o jogador acerta, sua pontuação é calculada com base nas tentativas feitas.
+Estrutura do Projeto
 
-O jogo permite que o jogador tente adivinhar um número secreto gerado aleatoriamente entre 1 e 100. A cada tentativa, o sistema informa se o número é maior ou menor que o chute. Quando o jogador acerta, sua pontuação é calculada com base na quantidade de tentativas realizadas.
+Os arquivos do projeto estão no diretório ed01/:
 
-## 🧱 Estrutura do Projeto
+    Jogador.java: Representa o jogador.
 
-Os arquivos do projeto estão localizados no diretório `ed01/`:
+    Placar.java: Armazena o ranking dos jogadores.
 
-- `Jogador.java`: Classe que representa o jogador.
-- `Placar.java`: Armazena e exibe o ranking dos jogadores.
-- `Jogo.java`: Controla a lógica do jogo.
-- `Main.java`: Classe principal que executa a aplicação.
+    Jogo.java: Lógica do jogo.
 
-## 📌 Funcionalidades
+    Main.java: Classe principal que executa o jogo.
 
-- Cadastro de jogador com nome.
-- Contagem de tentativas.
-- Sistema de pontuação proporcional.
-- Geração aleatória do número secreto.
-- Exibição do ranking ao final do jogo.
+Funcionalidades
 
-## 📋 Tecnologias
+    Cadastro de jogador.
 
-- Java
-- Orientação a Objetos
-- Javadoc para documentação dos métodos e classes
+    Contagem de tentativas.
 
-## 👤 Autor
+    Cálculo de pontuação.
 
-Pedro Eduardo Pignoni  
-Aluno de Análise e Desenvolvimento de Sistemas — 4º Período  
+    Geração aleatória do número secreto.
+
+    Exibição do ranking ao final do jogo.
+
+Tecnologias
+
+    Java
+
+    Programação Orientada a Objetos
+
+    Javadoc para documentação
+
+Autor
+
+Pedro Eduardo Pignoni
+Aluno de Análise e Desenvolvimento de Sistemas — 4º Período
 Universidade Tecnológica do Paraná (UTP)
