@@ -1,0 +1,22 @@
+# Java compiled files
+*.class
+
+# Logs
+*.log
+
+# IDEs e arquivos temporários
+.mtj.tmp/
+*.ctxt
+
+# Arquivos de empacotamento
+*.jar
+*.zip
+*.rar
+*.tar.gz
+*.war
+*.ear
+*.nar
+
+# Erros da JVM
+hs_err_pid*
+replay_pid*
