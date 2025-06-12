@@ -1,0 +1,51 @@
+import java.util.*;
+
+public class ContatoController {
+    private List<Contato> contatos = new ArrayList<>();
+
+    public void adicionar(Contato contato) {
+        if (contato.getNome().length() < 3) {
+            System.out.println("Nome deve ter pelo menos 3 caracteres.");
+            return;
+        }
+
+        if (contato instanceof PessoaFisica pf && !pf.getCpf().matches("\\d{11}")) {
+            System.out.println("CPF inválido.");
+            return;
+        }
+
+        if (contato instanceof PessoaJuridica pj && !pj.getCnpj().matches("\\d{14}")) {
+            System.out.println("CNPJ inválido.");
+            return;
+        }
+
+        for (Contato c : contatos) {
+            if (contato instanceof PessoaFisica pf && c instanceof PessoaFisica) {
+                if (((PessoaFisica) c).getCpf().equals(pf.getCpf())) {
+                    System.out.println("CPF já cadastrado.");
+                    return;
+                }
+            } else if (contato instanceof PessoaJuridica pj && c instanceof PessoaJuridica) {
+                if (((PessoaJuridica) c).getCnpj().equals(pj.getCnpj())) {
+                    System.out.println("CNPJ já cadastrado.");
+                    return;
+                }
+            }
+        }
+
+        contatos.add(contato);
+        System.out.println("Contato adicionado com sucesso.");
+    }
+
+    public void remover(String identificador) {
+        contatos.removeIf(c ->
+            (c instanceof PessoaFisica && ((PessoaFisica) c).getCpf().equals(identificador)) ||
+            (c instanceof PessoaJuridica && ((PessoaJuridica) c).getCnpj().equals(identificador))
+        );
+        System.out.println("Contato removido, se existia.");
+    }
+
+    public List<Contato> listar() {
+        return contatos;
+    }
+}

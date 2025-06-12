@@ -1,0 +1,25 @@
+import java.util.List;
+
+public class ContatoView {
+
+    public void exibirMenu() {
+        System.out.println("""
+            \nMenu:
+            1 - Adicionar Pessoa Física
+            2 - Adicionar Pessoa Jurídica
+            3 - Listar Contatos
+            4 - Remover Contato (por CPF ou CNPJ)
+            0 - Sair
+        """);
+    }
+
+    public void mostrarContatos(List<Contato> contatos) {
+        System.out.printf("%-20s %-15s %-25s %-20s\n", "Nome", "Telefone", "Email", "CPF/CNPJ");
+        for (Contato c : contatos) {
+            String id = (c instanceof PessoaFisica pf) ? pf.getCpf() :
+                        (c instanceof PessoaJuridica pj) ? pj.getCnpj() : "";
+            System.out.printf("%-20s %-15s %-25s %-20s\n",
+                    c.getNome(), c.getTelefone(), c.getEmail(), id);
+        }
+    }
+}

@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        ContatoController controller = new ContatoController();
+        ContatoView view = new ContatoView();
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            view.exibirMenu();
+            System.out.print("Escolha uma opção: ");
+            opcao = Integer.parseInt(scanner.nextLine());
+
+            switch (opcao) {
+                case 1 -> {
+                    System.out.print("Nome: ");
+                    String nome = scanner.nextLine();
+                    System.out.print("Telefone: ");
+                    String telefone = scanner.nextLine();
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+                    System.out.print("CPF (11 dígitos): ");
+                    String cpf = scanner.nextLine();
+                    controller.adicionar(new PessoaFisica(nome, telefone, email, cpf));
+                }
+                case 2 -> {
+                    System.out.print("Nome: ");
+                    String nome = scanner.nextLine();
+                    System.out.print("Telefone: ");
+                    String telefone = scanner.nextLine();
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+                    System.out.print("CNPJ (14 dígitos): ");
+                    String cnpj = scanner.nextLine();
+                    controller.adicionar(new PessoaJuridica(nome, telefone, email, cnpj));
+                }
+                case 3 -> view.mostrarContatos(controller.listar());
+                case 4 -> {
+                    System.out.print("Digite o CPF ou CNPJ para remover: ");
+                    String id = scanner.nextLine();
+                    controller.remover(id);
+                }
+                case 0 -> System.out.println("Encerrando...");
+                default -> System.out.println("Opção inválida.");
+            }
+
+        } while (opcao != 0);
+
+        scanner.close();
+    }
+}
